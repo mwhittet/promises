@@ -1,17 +1,14 @@
-function step1() {
-  step2()
+function sync(callback) {
+  setTimeout(function() {
+    const res = deferred();
+    callback(res);
+  }, 1000);
 }
 
-function step2() {
-  step3()
+function deferred() {
+  return 'deferred';
 }
 
-function step3() {
-  step4()
-}
-
-function step4() {
-  debugger;
-}
-
-step1();
+sync(function(result) {
+  console.log(result);
+});
