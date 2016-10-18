@@ -1,14 +1,20 @@
-function sync(callback) {
-  setTimeout(function() {
-    const res = deferred();
-    callback(res);
-  }, 1000);
+function getSalary() {
+  return 33000;
 }
 
-function deferred() {
-  return 'deferred';
+function subtractTax(salary) {
+  return salary * 0.75;
 }
 
-sync(function(result) {
-  console.log(result);
-});
+function subtractRent(salary) {
+  return salary - 5000;
+}
+
+function getDisposableIncome() {
+  let salary = getSalary();
+  salary = subtractTax(salary);
+  salary = subtractRent(salary);
+  return salary;
+}
+
+console.log(getDisposableIncome());
