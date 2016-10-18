@@ -1,2 +1,2 @@
-# promises
+# Promises
 Playing about with promises.
